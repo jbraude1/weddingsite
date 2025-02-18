@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>FAQ - H+J Wedding</title>
+    <script>
+        if (!localStorage.getItem('wedding_auth')) {
+            window.location.href = 'login.html';
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .faq-section h1 {
+            margin-bottom: 40px;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .faq-section h2 {
+            color: #1a472a;
+            margin: 50px 0 10px;
+            font-size: 1.2rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .faq-section p {
+            margin: 0 0 40px;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 60px;
+            font-style: italic;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="mobile-logo">H+J</a>
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul>
+            <li style="font-weight: 900; margin-right: auto;"><a href="index.html">H+J</a></li>
+            <li><a href="rsvp.html">RSVP</a></li>
+            <li><a href="registry.html">Registry</a></li>
+            <li><a href="events.html">Wedding Events</a></li>
+            <li><a href="travel.html">Travel & Stay</a></li>
+            <li><a href="todo.html">Things to Do</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section class="faq-section">
+            <h1>FREQUENTLY ASKED QUESTIONS</h1>
+            
+            <h2>When should I arrive for the wedding festivities?</h2>
+            <p>Our wedding will take place over a long weekend - Saturday to Monday specifically. We encourage you to make a trip out of the event and arrive on island earlier, or stay later! Maui is an extremely special place and we would love for you to experience Hannah's home to the fullest. Don't forget to check out our "Maui" page to see all of our favorite things to do and places to eat on Maui!</p>
+
+            <h2>What will the weather be like?</h2>
+            <p>Maui doesn't fluctuate much from its typical balmy 75 degrees! May is one of the best months, with perfect temperatures and little rain! Our ceremony and reception will be held outdoors so we recommend coming prepared for warmer, tropical weather. Evenings can cool down slightly, but you will need to pack nothing more than a light jacket or shawl to stay cool!</p>
+
+            <h2>Should I rent a car?</h2>
+            <p>Maui does not have much public transit and Uber is still picking up but not yet reliable. We recommend renting a car from OGG airport, Turo, or local rental agencies. If you are traveling with a group, we recommend carpooling. If you have questions about rentals, don't hesitate to reach out!</p>
+
+            <h2>Will transportation to/from the wedding be provided?</h2>
+            <p>Yes! We will be providing transportation to/from the wedding venue with pickups set at our hotel blocks. Stay tuned for more information!</p>
+
+            <h2>Will there be parking at the venue?</h2>
+            <p>Yes! Olowalu Plantation House provides on-site parking for a limited number of guests. If you plan on driving please let us know ahead of time. We want everyone to have a good time but still be safe, if you are unable to drive your car home at the end of the night you can leave it at the venue as long as it is picked up by 10am 5/25.</p>
+
+            <h2>Where should I stay?</h2>
+            <p>Check out our "Travel & Accommodations" page for more details on our suggested Hotels as well as those with blocks for the wedding. Maui also has some extremely unique homes and stays, we recommend exploring AirBnB and property rental options if you are traveling with a group. We have provided some suggestions on the "Travel & Accommodations" page.</p>
+
+            <h2>Are kids welcome?</h2>
+            <p>While we love your little ones, we are limiting our younger invitees to family only. If your formal invitation specifies "family" then the whole family is invited! You will be able to specify who will be coming when you RSVP. If you need help arranging childcare on island, please let us know and we are happy to help!</p>
+
+            <h2>Can I bring a date?</h2>
+            <p>If you have a +1 specified on your formal invitation, then yes! If not, we please ask that you only RSVP those specified in your formal invitation.</p>
+
+            <h2>How do I dress in "Aloha Attire" for the Welcome Party?</h2>
+            <p>Aloha Attire is a classic look for most locals! For men, think a nice Aloha Shirt or fun button-down paired with jeans or khakis. For women, bright or printed dresses at any length, in more casual materials. Slippers (flip-flops) and sneakers welcome! If you have questions about the dress code, don't hesitate to reach out to Hannah!</p>
+
+            <h2>How do I dress in "Elevated Aloha" for the Wedding?</h2>
+            <p>Elevated Aloha takes your classic Aloha Attire a notch up. For men, we encourage light colored or linen suits, aloha shirts with slacks, and dress shoes. We ask that you try to refrain from black or darker colored suits. Please no slippers (flip flops). For women, we want to see those same fun colors and prints, at longer lengths and in more formal fabrics. Please note that the ceremony will be held outdoors on a mixture of grass and pavement. If you have any questions about dress code, Hannah is a text away!</p>
+
+            <h2>Who should I reach out to with questions!</h2>
+            <p>If you have any questions at all, you can feel free to text Hannah (808-268-2654) or Jonathan (415-606-6750) at any time!</p>
+
+            <div class="contact-info">
+                <p>More FAQs coming soon!</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul');
+            const body = document.body;
+            menu.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const menu = document.querySelector('nav ul');
+            const menuButton = document.querySelector('.menu-toggle');
+            if (menu.classList.contains('active') && 
+                !menu.contains(e.target) && 
+                !menuButton.contains(e.target)) {
+                menu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+    </script>
+</body>
+</html> 

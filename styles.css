@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
+
 body {
     background-color: #e5e5cf;
     color: #3b533c;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Tenor Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -64,9 +66,9 @@ nav a:hover {
 
 .hero-text {
     font-size: 3rem;
-    font-weight: 800;
+    font-weight: 400;
     margin: 40px 0;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 .hero-image {
@@ -78,16 +80,16 @@ nav a:hover {
 
 .date {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 400;
     margin: 20px 0 10px 0;
-    letter-spacing: 0.5px;
+    letter-spacing: 1.5px;
 }
 
 .location {
     font-size: 1.2rem;
     margin-top: 0;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
 }
 
 main {
@@ -98,13 +100,12 @@ main {
 section {
     margin-bottom: 60px;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 8px;
 }
 
 h2 {
     margin-top: 0;
-    font-weight: 600;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 .palm-tree {
@@ -121,8 +122,6 @@ h2 {
 }
 
 .event-card {
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 8px;
     padding: 25px;
     margin: 20px 0;
     border-left: 4px solid #3b533c;
