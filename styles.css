@@ -112,6 +112,7 @@ h2 {
     height: 50px;
     display: block;
     margin: 20px auto;
+    object-fit: contain;
 }
 
 .event-timeline {
@@ -400,13 +401,34 @@ h2 {
     border-top: none;
 }
 
+.mobile-logo {
+    display: none;
+}
+
 @media (max-width: 768px) {
+    nav {
+        position: fixed;
+        width: 100%;
+        background: #e5e5cf;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        height: 3rem;
+    }
+
     .menu-toggle {
         display: block;
-        position: absolute;
-        right: 1rem;
-        top: 1rem;
+        position: relative;
+        right: 0;
         z-index: 1001;
+        background: transparent;
+        padding: 0.5rem;
+        border-radius: 4px;
+        margin-left: auto;
+        font-size: 1.2rem;
     }
 
     nav ul {
@@ -415,12 +437,14 @@ h2 {
         top: 0;
         left: 0;
         right: 0;
-        background: white;
+        background: #e5e5cf;
         flex-direction: column;
         width: 100%;
         height: 100vh;
         text-align: center;
         padding-top: 4rem;
+        overflow-y: auto;
+        z-index: 999;
     }
 
     nav ul.active {
@@ -432,8 +456,26 @@ h2 {
     }
 
     nav ul li:first-child {
-        margin-right: 0;
-        margin-bottom: 2rem;
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 0;
+        display: none;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+        padding: 1rem;
+        display: block;
+    }
+
+    .mobile-logo {
+        display: block;
+        font-weight: 900;
+        font-size: 1.2rem;
+        text-decoration: none;
+        color: #1a472a;
+        padding: 0.5rem;
     }
 
     body.menu-open {
@@ -461,11 +503,12 @@ h2 {
     }
 
     .palm-tree {
-        width: 100px;
+        width: 50px;
+        height: auto;
     }
 
     main {
-        padding: 1rem;
+        padding: 4rem 1rem 1rem 1rem;
     }
 
     .event-card, .registry-card {
@@ -482,13 +525,4 @@ h2 {
 /* Prevent body scroll when menu is open */
 body.menu-open {
     overflow: hidden;
-}
-
-/* You can also target specific device sizes */
-@media (max-width: 480px) {
-    /* Styles for extra small devices */
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-    /* Styles for tablets and smaller laptops */
 } 

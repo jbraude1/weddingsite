@@ -81,6 +81,10 @@
 </head>
 <body>
     <nav>
+        <a href="index.html" class="mobile-logo">H+J</a>
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
         <ul>
             <li style="font-weight: 900; margin-right: auto;"><a href="index.html">H+J</a></li>
             <li><a href="rsvp.html">RSVP</a></li>
@@ -143,6 +147,25 @@
                 }, i * 50); // Stagger the confetti creation
             }
         }
+
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul');
+            const body = document.body;
+            menu.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const menu = document.querySelector('nav ul');
+            const menuButton = document.querySelector('.menu-toggle');
+            if (menu.classList.contains('active') && 
+                !menu.contains(e.target) && 
+                !menuButton.contains(e.target)) {
+                menu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
     </script>
 </body>
 </html> 
