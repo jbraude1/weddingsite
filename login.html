@@ -6,11 +6,13 @@
     <meta name="robots" content="noindex,nofollow">
     <title>Welcome - H+J Wedding</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .login-container {
             max-width: 400px;
+            width: 90%;
             margin: 100px auto;
-            padding: 40px;
+            padding: 40px 20px;
             text-align: center;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 12px;
@@ -29,9 +31,11 @@
             border: 1px solid #ddd;
             border-radius: 6px;
             font-size: 16px;
+            box-sizing: border-box;
         }
 
         .login-form button {
+            width: 100%;
             background: #1a472a;
             color: white;
             border: none;
@@ -50,6 +54,18 @@
             color: #d32f2f;
             margin-top: 10px;
             display: none;
+        }
+
+        @media (max-width: 768px) {
+            .login-container {
+                margin: 50px auto;
+                padding: 30px 15px;
+            }
+
+            .login-form input,
+            .login-form button {
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
         }
     </style>
 </head>
@@ -75,14 +91,12 @@
             }
         }
 
-        // Handle enter key
         document.getElementById('password').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 checkPassword();
             }
         });
 
-        // Prevent access if not authenticated
         if (!localStorage.getItem('wedding_auth') && window.location.pathname !== '/login.html') {
             window.location.href = 'login.html';
         }
