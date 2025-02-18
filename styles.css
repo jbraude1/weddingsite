@@ -492,13 +492,14 @@ h2 {
     }
 
     .countdown {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        justify-content: space-around;
         padding: 1rem;
     }
 
     .countdown-item {
-        width: 45%;
-        margin: 0.5rem;
+        width: auto;
+        margin: 0;
     }
 
     .palm-tree {
