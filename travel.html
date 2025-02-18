@@ -37,6 +37,16 @@
     </main>
 
     <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
         function logout() {
             localStorage.removeItem('wedding_auth');
             window.location.href = 'login.html';

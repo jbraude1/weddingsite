@@ -85,6 +85,16 @@
     </div>
 
     <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
         function checkPassword() {
             const password = document.getElementById('password').value;
             if (password === 'getbraude') {

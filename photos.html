@@ -181,7 +181,6 @@
             <li><a href="events.html">Wedding Events</a></li>
             <li><a href="travel.html">Travel & Stay</a></li>
             <li><a href="todo.html">Things to Do</a></li>
-            <li><a href="photos.html">Photos</a></li>
         </ul>
     </nav>
 
@@ -282,6 +281,16 @@
                         navigatePhoto(1);
                         break;
                 }
+            }
+        });
+
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
             }
         });
 
