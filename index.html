@@ -58,6 +58,16 @@
     </main>
 
     <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
         function toggleMenu() {
             const menu = document.querySelector('nav ul');
             const body = document.body;

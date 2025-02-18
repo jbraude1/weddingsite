@@ -10,11 +10,16 @@ body {
 }
 
 nav {
-    background: none;
+    background: #e5e5cf;
     padding: 1rem;
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: box-shadow 0.3s ease;
+}
+
+nav.scrolled {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
