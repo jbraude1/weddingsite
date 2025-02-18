@@ -1,0 +1,8 @@
+---
+description: 
+globs: *.py
+---
+
+# Your rule content
+
+- Always use snake_case when writing functions

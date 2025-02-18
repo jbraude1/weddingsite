@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Signup - Our Wedding</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li style="font-weight: 900; margin-right: auto;"><a href="index.html" class="nav-link">H+J</a></li>
+            <li><a href="rsvp.html" class="nav-link">RSVP</a></li>
+            <li><a href="registry.html" class="nav-link">Registry</a></li>
+            <li><a href="events.html" class="nav-link">Wedding Events</a></li>
+            <li><a href="travel.html" class="nav-link">Travel & Stay</a></li>
+            <li><a href="todo.html" class="nav-link">Things to Do</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section>
+            <h2>Stay Updated</h2>
+            <p>Sign up to receive updates about our wedding!</p>
+            
+            <form id="emailForm" class="signup-form">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <button type="submit" class="submit-button">Sign Up</button>
+            </form>
+            <div id="message"></div>
+        </section>
+    </main>
+
+    <script>
+        const form = document.getElementById('emailForm');
+        const messageDiv = document.getElementById('message');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            // Replace this URL with your Google Apps Script Web App URL
+            const scriptURL = 'YOUR_GOOGLE_SCRIPT_URL';
+            
+            fetch(scriptURL, {
+                method: 'POST',
+                body: new FormData(form)
+            })
+            .then(response => {
+                messageDiv.innerHTML = 'Thanks for signing up!';
+                form.reset();
+            })
+            .catch(error => {
+                messageDiv.innerHTML = 'Oops! Something went wrong.';
+                console.error('Error!', error.message);
+            });
+        });
+    </script>
+</body>
+</html> 

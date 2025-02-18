@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>RSVP - H+J Wedding</title>
+    <script>
+        if (!localStorage.getItem('wedding_auth')) {
+            window.location.href = 'login.html';
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li style="font-weight: 900; margin-right: auto;"><a href="index.html" class="nav-link">H+J</a></li>
+            <li><a href="rsvp.html" class="nav-link">RSVP</a></li>
+            <li><a href="registry.html" class="nav-link">Registry</a></li>
+            <li><a href="events.html" class="nav-link">Wedding Events</a></li>
+            <li><a href="travel.html" class="nav-link">Travel & Stay</a></li>
+            <li><a href="todo.html" class="nav-link">Things to Do</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section>
+            <h2>RSVP</h2>
+            <p>Please click below to RSVP for our wedding:</p>
+            <a href="https://YOUR-RSVP-SITE.com" target="_blank" rel="noopener noreferrer" class="rsvp-button">
+                RSVP Now
+            </a>
+            
+            <!-- Add Weather Widget -->
+            <div class="weather-widget">
+                <h3>Local Weather</h3>
+                <div id="weather-info">
+                    <div id="temperature"></div>
+                    <div id="description"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        const WEATHER_API_KEY = 'YOUR_API_KEY'; // Get this from OpenWeatherMap
+        const CITY = 'YOUR_CITY'; // e.g. 'New York'
+        
+        async function getWeather() {
+            try {
+                const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${CITY}&units=imperial&appid=${WEATHER_API_KEY}`);
+                const data = await response.json();
+                
+                document.getElementById('temperature').textContent = `${Math.round(data.main.temp)}°F`;
+                document.getElementById('description').textContent = data.weather[0].description;
+            } catch (error) {
+                console.error('Error fetching weather:', error);
+            }
+        }
+        
+        getWeather();
+    </script>
+</body>
+</html> 

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Photos - H+J Wedding</title>
+    <script>
+        if (!localStorage.getItem('wedding_auth')) {
+            window.location.href = 'login.html';
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            padding: 12px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .photo-item {
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+            cursor: pointer;
+            aspect-ratio: auto;
+            line-height: 0;
+            border-radius: 12px;
+            min-height: 300px;
+        }
+
+        .photo-item:hover {
+            transform: none;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            border-radius: 12px;
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Specific image layouts */
+        .photo-item:nth-child(1) { grid-column: span 2; height: 400px; }
+        .photo-item:nth-child(4) { grid-column: span 2; height: 400px; }
+        .photo-item:nth-child(7) { grid-row: span 2; height: 612px; }
+        .photo-item:nth-child(9) { grid-column: span 2; height: 400px; }
+        .photo-item:not(:nth-child(1)):not(:nth-child(4)):not(:nth-child(7)):not(:nth-child(9)) {
+            height: 300px;
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            cursor: pointer;
+        }
+
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            padding: 20px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            z-index: 1001;
+        }
+
+        .nav-button:hover {
+            background: rgba(0,0,0,0.6);
+        }
+
+        .prev-button {
+            left: 20px;
+        }
+
+        .next-button {
+            right: 20px;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 4px;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .gallery-intro {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .gallery-intro h1 {
+            color: #1a472a;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .photo-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4px;
+            }
+            
+            .photo-item:nth-child(1),
+            .photo-item:nth-child(4),
+            .photo-item:nth-child(9) {
+                grid-column: span 2;
+                height: 300px;
+            }
+            
+            .photo-item:nth-child(7) {
+                grid-column: auto;
+                grid-row: auto;
+                height: 250px;
+            }
+            
+            .photo-item:not(:nth-child(1)):not(:nth-child(4)):not(:nth-child(9)) {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .photo-grid {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+            
+            .photo-item:nth-child(n) {
+                grid-column: auto;
+                height: 300px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li style="font-weight: 900; margin-right: auto;"><a href="index.html">H+J</a></li>
+            <li><a href="rsvp.html">RSVP</a></li>
+            <li><a href="registry.html">Registry</a></li>
+            <li><a href="events.html">Wedding Events</a></li>
+            <li><a href="travel.html">Travel & Stay</a></li>
+            <li><a href="todo.html">Things to Do</a></li>
+            <li><a href="photos.html">Photos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="gallery-intro">
+            <h1>Our Photos</h1>
+            <p>A collection of memories we'd love to share with you.</p>
+        </div>
+
+        <div class="photo-grid">
+            <div class="photo-item" onclick="openLightbox('photos/IMG_2769.jpeg')">
+                <img src="photos/IMG_2769.jpeg" alt="Wedding Photo">
+            </div>
+            <div class="photo-item" onclick="openLightbox('photos/IMG_2770.jpeg')">
+                <img src="photos/IMG_2770.jpeg" alt="Wedding Photo">
+            </div>
+            <div class="photo-item" onclick="openLightbox('photos/IMG_2771.jpeg')">
+                <img src="photos/IMG_2771.jpeg" alt="Wedding Photo">
+            </div>
+            <div class="photo-item" onclick="openLightbox('photos/IMG_2772.jpeg')">
+                <img src="photos/IMG_2772.jpeg" alt="Wedding Photo">
+            </div>
+            <div class="photo-item" onclick="openLightbox('photos/IMG_2773.jpeg')">
+                <img src="photos/IMG_2773.jpeg" alt="Wedding Photo">
+            </div>
+            <div class="photo-item" onclick="openLightbox('photos/IMG_2774.jpeg')">
+                <img src="photos/IMG_2774.jpeg" alt="Wedding Photo">
+            </div>
+            <div class="photo-item" onclick="openLightbox('photos/IMG_2775.jpeg')">
+                <img src="photos/IMG_2775.jpeg" alt="Wedding Photo">
+            </div>
+            <div class="photo-item" onclick="openLightbox('photos/IMG_2776.jpeg')">
+                <img src="photos/IMG_2776.jpeg" alt="Wedding Photo">
+            </div>
+            <div class="photo-item" onclick="openLightbox('photos/IMG_2777.jpeg')">
+                <img src="photos/IMG_2777.jpeg" alt="Wedding Photo">
+            </div>
+            <div class="photo-item" onclick="openLightbox('photos/IMG_2778.jpeg')">
+                <img src="photos/IMG_2778.jpeg" alt="Wedding Photo">
+            </div>
+        </div>
+
+        <div class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox">&times;</span>
+            <span class="nav-button prev-button" onclick="event.stopPropagation(); navigatePhoto(-1)">&#10094;</span>
+            <span class="nav-button next-button" onclick="event.stopPropagation(); navigatePhoto(1)">&#10095;</span>
+            <img src="" alt="Enlarged photo">
+        </div>
+    </main>
+
+    <script>
+        const photos = [
+            'photos/IMG_2769.jpeg',
+            'photos/IMG_2770.jpeg',
+            'photos/IMG_2771.jpeg',
+            'photos/IMG_2772.jpeg',
+            'photos/IMG_2773.jpeg',
+            'photos/IMG_2774.jpeg',
+            'photos/IMG_2775.jpeg',
+            'photos/IMG_2776.jpeg',
+            'photos/IMG_2777.jpeg',
+            'photos/IMG_2778.jpeg'
+        ];
+        let currentPhotoIndex = 0;
+
+        function openLightbox(imageSrc) {
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            currentPhotoIndex = photos.indexOf(imageSrc);
+            lightboxImg.src = imageSrc;
+            lightbox.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.querySelector('.lightbox');
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function navigatePhoto(direction) {
+            currentPhotoIndex = (currentPhotoIndex + direction + photos.length) % photos.length;
+            const lightboxImg = document.querySelector('.lightbox img');
+            lightboxImg.src = photos[currentPhotoIndex];
+        }
+
+        // Handle keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (document.querySelector('.lightbox').style.display === 'block') {
+                switch(e.key) {
+                    case 'Escape':
+                        closeLightbox();
+                        break;
+                    case 'ArrowLeft':
+                        navigatePhoto(-1);
+                        break;
+                    case 'ArrowRight':
+                        navigatePhoto(1);
+                        break;
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

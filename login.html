@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Welcome - H+J Wedding</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 40px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container img {
+            width: 60px;
+            margin-bottom: 20px;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .login-form button {
+            background: #1a472a;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .login-form button:hover {
+            background: #2c6844;
+        }
+
+        .error-message {
+            color: #d32f2f;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="palm-tree.png" alt="Palm Tree Icon">
+        <h1 style="color: #1a472a; margin-bottom: 20px;">H+J Wedding</h1>
+        <div class="login-form">
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <button onclick="checkPassword()">Enter Site</button>
+            <div id="error-message" class="error-message">Incorrect password. Please try again.</div>
+        </div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === 'getbraude') {
+                localStorage.setItem('wedding_auth', 'true');
+                window.location.href = 'index.html';
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+            }
+        }
+
+        // Handle enter key
+        document.getElementById('password').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+
+        // Prevent access if not authenticated
+        if (!localStorage.getItem('wedding_auth') && window.location.pathname !== '/login.html') {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html> 

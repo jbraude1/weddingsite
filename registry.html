@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Registry - H+J Wedding</title>
+    <script>
+        if (!localStorage.getItem('wedding_auth')) {
+            window.location.href = 'login.html';
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .registry-options {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px auto;
+            max-width: 1200px;
+        }
+        .registry-card {
+            text-align: center;
+            padding: 35px;
+            width: 260px;
+            background: white;
+            position: relative;
+            border: none;
+            margin: 15px;
+        }
+        .registry-card::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border: 12px solid #1a472a;
+            border-radius: 10px;
+            pointer-events: none;
+        }
+        .registry-card::after {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            border: 4px solid #1a472a;
+            border-radius: 6px;
+            pointer-events: none;
+        }
+        .registry-icon {
+            font-size: 52px;
+            color: #1a472a;
+            margin: 20px 0;
+            transition: transform 0.3s ease;
+        }
+        .registry-icon:hover {
+            transform: scale(1.1);
+        }
+        .registry-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            padding: 15px;
+        }
+        @keyframes gentleShake {
+            0%, 100% { transform: rotate(0) scale(1.1); }
+            25% { transform: rotate(-5deg) scale(1.1); }
+            75% { transform: rotate(5deg) scale(1.1); }
+        }
+        .registry-card:hover .fa-gift {
+            animation: gentleShake 0.6s ease-in-out;
+        }
+        .gift-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li style="font-weight: 900; margin-right: auto;"><a href="index.html">H+J</a></li>
+            <li><a href="rsvp.html">RSVP</a></li>
+            <li><a href="registry.html">Registry</a></li>
+            <li><a href="events.html">Wedding Events</a></li>
+            <li><a href="travel.html">Travel & Stay</a></li>
+            <li><a href="todo.html">Things to Do</a></li>
+        </ul>
+    </nav>
+    
+    <main class="registry-main">
+        <div class="art-deco-border">
+            <h1 class="registry-title">Registry</h1>
+            
+            <div class="registry-intro">
+                <p>While your presence is truly the greatest gift (we're not just saying that to be polite), we know some of you are determined to contribute more than just your charming company. For those insistent gift-givers, we've created two options below.</p>
+            </div>
+
+            <div class="registry-options">
+                <div class="registry-card">
+                    <h2>Wedding Registry</h2>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="gift-wrapper">
+                        <i class="fa-solid fa-gift registry-icon"></i>
+                    </a>
+                    <p>For those who don't trust us to pick our own stuff</p>
+                </div>
+
+                <div class="registry-card">
+                    <h2>Honeymoon Fund</h2>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-plane registry-icon"></i>
+                    </a>
+                    <p>Help fund our escape from reality</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function createConfetti(element) {
+            const animations = ['confettiLeft', 'confettiRight', 'confettiUp'];
+            
+            // Create multiple bursts of confetti
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti-piece';
+                    confetti.textContent = '🫣';
+                    
+                    // Center position relative to the gift icon
+                    confetti.style.left = '50%';
+                    confetti.style.top = '50%';
+                    confetti.style.transform = 'translate(-50%, -50%)';
+                    
+                    // Random animation
+                    const animation = animations[Math.floor(Math.random() * animations.length)];
+                    confetti.style.animation = `${animation} ${0.8 + Math.random() * 0.5}s ease-out forwards`;
+                    
+                    element.parentNode.appendChild(confetti);
+                    setTimeout(() => confetti.remove(), 1500);
+                }, i * 50); // Stagger the confetti creation
+            }
+        }
+    </script>
+</body>
+</html> 

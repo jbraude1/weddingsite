@@ -1,0 +1,408 @@
+body {
+    background-color: #e5e5cf;
+    color: #3b533c;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background-color: #e5e5cf;
+    padding: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(59, 83, 60, 0.1);
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav ul li:first-child {
+    position: absolute;
+    left: 0;
+}
+
+nav ul li:not(:first-child) {
+    margin: 0 10px;
+}
+
+nav a {
+    color: #3b533c;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.hero-text {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 40px 0;
+    letter-spacing: 1px;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    margin: 40px 0;
+    border-radius: 8px;
+}
+
+.date {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 20px 0 10px 0;
+    letter-spacing: 0.5px;
+}
+
+.location {
+    font-size: 1.2rem;
+    margin-top: 0;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 60px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+}
+
+h2 {
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.palm-tree {
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: 20px auto;
+}
+
+.event-timeline {
+    text-align: left;
+    padding: 20px;
+}
+
+.event-card {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    padding: 25px;
+    margin: 20px 0;
+    border-left: 4px solid #3b533c;
+}
+
+.event-date {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #3b533c;
+    margin-bottom: 10px;
+}
+
+.event-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+.event-details {
+    margin: 15px 0;
+}
+
+.event-time, .event-location {
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.event-details ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 15px 0;
+}
+
+.event-details li {
+    margin: 8px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.event-details li:before {
+    content: "•";
+    color: #3b533c;
+    position: absolute;
+    left: 0;
+}
+
+.rsvp-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #3b533c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.rsvp-button:hover {
+    opacity: 0.9;
+}
+
+.signup-form {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background: #0056b3;
+}
+
+#message {
+    text-align: center;
+    margin-top: 1rem;
+    color: #28a745;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    padding: 0.5rem;
+    min-width: 60px;
+}
+
+.countdown-item span:first-child {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #3b533c;
+}
+
+.countdown-item span:last-child {
+    font-size: 0.8rem;
+    color: #3b533c;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+}
+
+/* Registry Art Deco Styles */
+.registry-main {
+    padding: 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.art-deco-border {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem;
+    position: relative;
+    background: linear-gradient(to right, transparent 30%, rgba(229, 229, 207, 0.5) 50%, transparent 70%);
+}
+
+.art-deco-border::before, .art-deco-border::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: 
+        linear-gradient(to right,
+            transparent 0%,
+            transparent 35%,
+            rgba(59, 83, 60, 0.3) 35%,
+            rgba(59, 83, 60, 0.3) 65%,
+            transparent 65%,
+            transparent 100%
+        );
+}
+
+.registry-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.registry-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: #3b533c;
+    margin: 0.5rem auto;
+    opacity: 0.5;
+}
+
+.registry-intro {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+}
+
+.registry-options {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.registry-card {
+    flex: 1;
+    max-width: 400px;
+    padding: 2.5rem;
+    position: relative;
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    box-shadow: 0 2px 10px rgba(59, 83, 60, 0.1);
+}
+
+.registry-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.registry-card p {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.art-deco-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #3b533c;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: none;
+    position: relative;
+    border-radius: 4px;
+}
+
+.art-deco-button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.registry-divider {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.art-deco-diamond {
+    width: 12px;
+    height: 12px;
+    background: rgba(59, 83, 60, 0.3);
+    transform: rotate(45deg);
+    margin: 0 auto;
+}
+
+.art-deco-corner {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 1px solid rgba(59, 83, 60, 0.2);
+}
+
+.registry-card .art-deco-corner:first-of-type {
+    top: 10px;
+    left: 10px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.registry-card .art-deco-corner:last-of-type {
+    bottom: 10px;
+    right: 10px;
+    border-left: none;
+    border-top: none;
+}
+
+@media (max-width: 768px) {
+    .registry-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .registry-card {
+        width: 100%;
+    }
+    
+    .registry-divider {
+        transform: rotate(90deg);
+        margin: 2rem 0;
+    }
+} 

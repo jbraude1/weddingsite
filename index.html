@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>H+J Wedding</title>
+    <script>
+        // Authentication check
+        if (!localStorage.getItem('wedding_auth')) {
+            window.location.href = 'login.html';
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li style="font-weight: 900; margin-right: auto;"><a href="index.html">H+J</a></li>
+            <li><a href="rsvp.html">RSVP</a></li>
+            <li><a href="registry.html">Registry</a></li>
+            <li><a href="events.html">Wedding Events</a></li>
+            <li><a href="travel.html">Travel & Stay</a></li>
+            <li><a href="todo.html">Things to Do</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <h1 class="hero-text">WE'RE GETTING MARRIED</h1>
+        <img src="couple.jpg" alt="Engagement photo by the lake" class="hero-image">
+        <p class="date">SATURDAY, MAY 24th 2026</p>
+        <p class="location">ON MAUI, HI</p>
+        
+        <div id="countdown" class="countdown">
+            <div class="countdown-item">
+                <span id="days">0</span>
+                <span>Days</span>
+            </div>
+            <div class="countdown-item">
+                <span id="hours">0</span>
+                <span>Hours</span>
+            </div>
+            <div class="countdown-item">
+                <span id="minutes">0</span>
+                <span>Minutes</span>
+            </div>
+            <div class="countdown-item">
+                <span id="seconds">0</span>
+                <span>Seconds</span>
+            </div>
+        </div>
+
+        <img src="palm.gif" alt="Palm tree" class="palm-tree">
+    </main>
+
+    <script>
+        const weddingDate = new Date('2026-05-24T00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            document.getElementById('days').textContent = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById('hours').textContent = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById('minutes').textContent = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById('seconds').textContent = Math.floor((distance % (1000 * 60)) / 1000);
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html> 
