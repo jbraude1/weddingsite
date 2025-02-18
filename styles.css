@@ -482,4 +482,13 @@ h2 {
 /* Prevent body scroll when menu is open */
 body.menu-open {
     overflow: hidden;
+}
+
+/* You can also target specific device sizes */
+@media (max-width: 480px) {
+    /* Styles for extra small devices */
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Styles for tablets and smaller laptops */
 } 
