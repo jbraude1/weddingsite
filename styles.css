@@ -10,12 +10,11 @@ body {
 }
 
 nav {
-    background-color: white;
+    background: none;
     padding: 1rem;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 nav ul {
@@ -24,11 +23,13 @@ nav ul {
     margin: 0;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+    position: relative;
 }
 
 nav ul li:first-child {
-    margin-right: auto;
+    position: absolute;
+    left: 0;
 }
 
 nav ul li:not(:first-child) {
