@@ -520,6 +520,18 @@ h2 {
         gap: 0.5rem;
         padding: 0.5rem;
     }
+
+    .registry-options {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .registry-card {
+        width: 85%;
+        max-width: none;
+        margin: 0;
+    }
 }
 
 /* Prevent body scroll when menu is open */
