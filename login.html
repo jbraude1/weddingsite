@@ -101,7 +101,10 @@
             }
         });
 
-        if (!localStorage.getItem('wedding_auth') && window.location.pathname !== '/login.html') {
+        // Fix for mobile path checking
+        const currentPath = window.location.pathname;
+        const isLoginPage = currentPath.endsWith('login.html') || currentPath === '/';
+        if (!localStorage.getItem('wedding_auth') && !isLoginPage) {
             window.location.href = 'login.html';
         }
     </script>

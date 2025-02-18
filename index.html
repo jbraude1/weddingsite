@@ -7,7 +7,9 @@
     <title>H+J Wedding</title>
     <script>
         // Authentication check
-        if (!localStorage.getItem('wedding_auth')) {
+        const currentPath = window.location.pathname;
+        const isLoginPage = currentPath.endsWith('login.html') || currentPath === '/';
+        if (!localStorage.getItem('wedding_auth') && !isLoginPage) {
             window.location.href = 'login.html';
         }
     </script>
